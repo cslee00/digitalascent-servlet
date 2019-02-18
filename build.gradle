@@ -16,7 +16,6 @@
 
 plugins {
     id "java-library"
-    id "groovy"
     id "com.digitalascent.gradle.project" version "0.6.0"
 }
 
