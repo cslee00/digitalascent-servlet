@@ -1,0 +1,71 @@
+/*
+ * Copyright 2017-2017 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+plugins {
+    id "java-library"
+    id "groovy"
+    id "com.digitalascent.gradle.project" version "0.6.0"
+}
+
+description = "Common utilities for working with Servlet API"
+group = "com.digitalascent"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+version = scmVersion.version
+
+repositories {
+    jcenter()
+}
+
+ext.versions = [
+        "guava" : "27.0-jre",
+        "servletApi": "3.1.0"
+]
+
+dependencies {
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: versions.servletApi
+
+    implementation 'com.digitalascent:digitalascent-common:1.0.0'
+    implementation "com.digitalascent:digitalascent-fluent-logger:1.0.3"
+
+    implementation group: 'com.google.guava', name: 'guava', version: "${versions.guava}"
+}
+
+contacts {
+    'chris@digitalascent.com' {
+        moniker 'Chris Lee'
+        github 'cslee00'
+        role 'owner'
+        role 'notify'
+    }
+}
+
+bintray {
+    pkg {
+        vcsUrl = "https://github.com/cslee00/${project.name}.git"
+    }
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+    gradleVersion = "5.2.1"
+}
+
+jar {
+    manifest {
+        attributes("Automatic-Module-Name": "com.digitalascent.servlet")
+    }
+}
