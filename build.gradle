@@ -37,7 +37,7 @@ ext.versions = [
 dependencies {
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: versions.servletApi
 
-    implementation 'com.digitalascent:digitalascent-common:1.0.0'
+    implementation 'com.digitalascent:digitalascent-common:1.0.1'
     implementation "com.digitalascent:digitalascent-fluent-logger:1.0.3"
 
     implementation group: 'com.google.guava', name: 'guava', version: "${versions.guava}"
