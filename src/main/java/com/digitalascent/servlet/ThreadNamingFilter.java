@@ -51,6 +51,7 @@ public class ThreadNamingFilter extends AbstractFilter {
     /**
      * Override to add extra data to the request context, which will show up in the thread name.
      *
+     *
      * @param request
      * @param context
      */
