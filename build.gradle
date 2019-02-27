@@ -41,6 +41,13 @@ dependencies {
     implementation "com.digitalascent:digitalascent-fluent-logger:1.0.3"
 
     implementation group: 'com.google.guava', name: 'guava', version: "${versions.guava}"
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.1.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.1.0")
+    testImplementation("org.assertj:assertj-core:3.11.1")
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+
+    testCompileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: versions.servletApi
 }
 
 contacts {

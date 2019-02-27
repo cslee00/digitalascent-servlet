@@ -67,7 +67,7 @@ public final class HttpRequests {
         checkNotNull(request, "request is required");
 
         Cookie[] cookies = request.getCookies();
-        if (cookies == null) {
+        if (cookies == null || cookies.length == 0) {
             return Stream.empty();
         }
 

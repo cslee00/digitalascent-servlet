@@ -44,11 +44,11 @@ public class ThreadNamingFilter extends AbstractFilter {
         Map<String, Object> context = new LinkedHashMap<>();
         context.put("url", request.getRequestURL());
         context.put("principal", request.getUserPrincipal());
-        customizeThreadContext( context );
+        customizeThreadContext( request, context );
         return ImmutableMap.copyOf(context);
     }
 
-    protected void customizeThreadContext(Map<String, Object> context) {
+    protected void customizeThreadContext(HttpServletRequest request, Map<String, Object> context) {
         // EMPTY, for overriding
     }
 }
